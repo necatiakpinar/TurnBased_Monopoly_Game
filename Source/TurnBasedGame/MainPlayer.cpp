@@ -12,6 +12,7 @@ AMainPlayer::AMainPlayer()
 void AMainPlayer::BeginPlay()
 {
 	Super::BeginPlay();
+	UE_LOG(LogTemp, Warning, TEXT("Player start worked!"));
 }
 
 void AMainPlayer::Tick(float DeltaSeconds)

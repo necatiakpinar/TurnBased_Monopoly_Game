@@ -7,20 +7,12 @@
 #include "BaseBoardArea.generated.h"
 
 UCLASS()
-class TURNBASEDGAME_API ABaseBoardArea : public AActor
+class TURNBASEDGAME_API UBaseBoardArea : public UObject
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ABaseBoardArea();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UBaseBoardArea();
 
 };

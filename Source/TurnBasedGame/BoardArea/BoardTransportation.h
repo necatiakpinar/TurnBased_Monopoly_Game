@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class TURNBASEDGAME_API ABoardTransportation : public ABaseBoardArea
+class TURNBASEDGAME_API UBoardTransportation : public UBaseBoardArea
 {
 	GENERATED_BODY()
 	
