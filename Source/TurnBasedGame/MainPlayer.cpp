@@ -3,6 +3,10 @@
 
 #include "MainPlayer.h"
 
+#include "GameModes/TurnBasedGameMode.h"
+#include "Kismet/GameplayStatics.h"
+#include "Subsystems/SSBoardData.h"
+
 AMainPlayer::AMainPlayer()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -12,7 +16,12 @@ AMainPlayer::AMainPlayer()
 void AMainPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("Player start worked!"));
+	GameMode = Cast<ATurnBasedGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
+	
+	if (GameMode)
+		if (GameMode->GetBoardData())
+			UE_LOG(LogTemp, Warning, TEXT("%d"), GameMode->GetBoardData()->TestNumber);
+			
 }
 
 void AMainPlayer::Tick(float DeltaSeconds)

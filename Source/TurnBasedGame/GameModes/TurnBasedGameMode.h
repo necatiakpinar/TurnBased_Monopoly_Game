@@ -7,6 +7,7 @@
 #include "TurnBasedGameMode.generated.h"
 
 
+class USSBoardData;
 class UMapLoaderManager;
 
 UCLASS()
@@ -14,13 +15,17 @@ class TURNBASEDGAME_API ATurnBasedGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+public:
+	FORCEINLINE USSBoardData* GetBoardData() const {return BoardDataSubSystem;}
 private:
 	UMapLoaderManager* MapLoaderManager;
+	USSBoardData* BoardDataSubSystem;
 	
 public:
 	virtual void InitGameState() override;
 	virtual void StartPlay() override;
 
 private:
+	void LoadAllGameData();
 	void InitializeManagers();
 };

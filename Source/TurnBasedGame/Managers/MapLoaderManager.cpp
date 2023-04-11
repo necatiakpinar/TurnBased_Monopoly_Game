@@ -3,7 +3,11 @@
 
 #include "MapLoaderManager.h"
 
-void UMapLoaderManager::Initialize()
+#include "Kismet/GameplayStatics.h"
+#include "TurnBasedGame/GameModes/TurnBasedGameGameInstance.h"
+#include "TurnBasedGame/Subsystems/SSBoardData.h"
+
+void UMapLoaderManager::Initialize(UDataTable* BoardDataTableObject)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Map Loader initialized!"));
+		BoardDataTable = BoardDataTableObject;
 }

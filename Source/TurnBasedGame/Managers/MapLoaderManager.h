@@ -6,15 +6,19 @@
 #include "UObject/NoExportTypes.h"
 #include "MapLoaderManager.generated.h"
 
-/**
- * 
- */
+class USSBoardData;
+
+class UDataTable;
+
 UCLASS()
 class TURNBASEDGAME_API UMapLoaderManager : public UObject
 {
 	GENERATED_BODY()
 
+	
 public:
-	void Initialize();
+	void Initialize(UDataTable* BoardDataTableObject);
 		
+private:
+	UDataTable* BoardDataTable;
 };

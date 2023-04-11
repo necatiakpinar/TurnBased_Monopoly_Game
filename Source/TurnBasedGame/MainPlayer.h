@@ -6,9 +6,8 @@
 #include "CombatActor.h"
 #include "MainPlayer.generated.h"
 
-/**
- * 
- */
+
+class ATurnBasedGameMode;
 UCLASS()
 class TURNBASEDGAME_API AMainPlayer : public ACombatActor
 {
@@ -20,6 +19,9 @@ public:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	float MoveSpeed;
+
+private:
+	ATurnBasedGameMode* GameMode;
 
 protected:
 	virtual void BeginPlay() override;
