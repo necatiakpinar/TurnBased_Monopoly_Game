@@ -6,19 +6,19 @@
 #include "AssetToolsModule.h"
 #include "AssetRegistry/AssetRegistryHelpers.h"
 #include "Engine/DataTable.h"
+#include "Kismet/GameplayStatics.h"
+#include "TurnBasedGame/BoardArea/BoardProperty.h"
 #include "TurnBasedGame/DataTables/DTBoardAreaTypes.h"
+#include "TurnBasedGame/GameModes/TurnBasedGameMode.h"
+#include "TurnBasedGame/Objects/ObjectBoardCard.h"
 
 void USSBoardData::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 	FString DataTableReference = "/Game/DataTables/DT_BoardAreas";
 	BoardData = LoadObject<UDataTable>(NULL, *DataTableReference, NULL, LOAD_None, NULL);
-
-	if(BoardData)
-	{
-		TestNumber = 2131321;
-		//FBoardAreaTypes* BoardAreaTypes = BoardData->FindRow<FBoardAreaTypes>("BoardProperty","");
-	}
+	TestNumber = 1234;
+	
 }
 
 void USSBoardData::Deinitialize()

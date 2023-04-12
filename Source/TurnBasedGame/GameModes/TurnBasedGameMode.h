@@ -8,6 +8,7 @@
 
 
 class USSBoardData;
+class USSMapLoader;
 class UMapLoaderManager;
 
 UCLASS()
@@ -20,12 +21,13 @@ public:
 private:
 	UMapLoaderManager* MapLoaderManager;
 	USSBoardData* BoardDataSubSystem;
+	USSMapLoader* MapLoaderSubSystem;
 	
 public:
 	virtual void InitGameState() override;
 	virtual void StartPlay() override;
 
 private:
-	void LoadAllGameData();
+	void LoadSubsystems();
 	void InitializeManagers();
 };

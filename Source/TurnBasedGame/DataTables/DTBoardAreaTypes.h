@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
+#include "TurnBasedGame/Enums/WorldObjectTypes.h"
 #include "DTBoardAreaTypes.generated.h"
 
 class AObjectBoardCard;
@@ -12,10 +13,10 @@ USTRUCT(BlueprintType)
 struct FBoardAreaTypes : public FTableRowBase
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)	
 	TSubclassOf<AObjectBoardCard> BoardCard;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	int32 BoardID;
+	EBoardAreaType BoardAreaType;
 };
 
 UCLASS(Blueprintable)
