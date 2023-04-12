@@ -16,12 +16,6 @@ AMainPlayer::AMainPlayer()
 void AMainPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	GameMode = Cast<ATurnBasedGameMode>(UGameplayStatics::GetGameMode(GetWorld()));
-	
-	if (GameMode)
-		if (GameMode->GetBoardData())
-			UE_LOG(LogTemp, Warning, TEXT("%d"), GameMode->GetBoardData()->TestNumber);
-			
 }
 
 void AMainPlayer::Tick(float DeltaSeconds)

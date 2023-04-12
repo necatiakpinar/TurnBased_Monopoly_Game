@@ -13,10 +13,12 @@ class TURNBASEDGAME_API UBaseBoardArea : public UObject
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	FORCEINLINE EBoardAreaType GetAreaType() { return BoardAreaType; }
+private:
 	EBoardAreaType BoardAreaType;
 public:	
 	// Sets default values for this actor's properties
 	UBaseBoardArea();
+	void Initialize(EBoardAreaType BoardAreaType);
 
 };

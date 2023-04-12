@@ -10,22 +10,20 @@
 class AObjectBoardCard;
 
 USTRUCT(BlueprintType)
-struct FBoardAreaTypes : public FTableRowBase
+struct FBoardAreaData : public FTableRowBase
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)	
 	TSubclassOf<AObjectBoardCard> BoardCard;
+
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	EBoardAreaType BoardAreaType;
 };
+
 
 UCLASS(Blueprintable)
 class TURNBASEDGAME_API UDTBoardAreaTypes : public UDataTable
 {
 	GENERATED_BODY()
-	
-public:
-	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
-	FString BoardCards; 
 	
 };

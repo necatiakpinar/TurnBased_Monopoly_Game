@@ -32,19 +32,11 @@ void ATurnBasedGameMode::LoadSubsystems()
 	{
 		BoardDataSubSystem = GameInstance->GetSubsystem<USSBoardData>();
 		MapLoaderSubSystem = GameInstance->GetSubsystem<USSMapLoader>();
-		
 	}
 }
 
 void ATurnBasedGameMode::InitializeManagers()
 {
-	// //Creation of managers
-	// MapLoaderManager = NewObject<UMapLoaderManager>(GetTransientPackage());
-	//
-	// //Initialization of managers
-	// if (MapLoaderManager)
-	// 	MapLoaderManager->Initialize(BoardDataSubSystem->GetBoardData());
-
-	MapLoaderSubSystem->CreateLevel(GetBoardData());
+	MapLoaderSubSystem->CreateLevel(GetBoardDataSubsystem()->GetBoardData());
 }
 

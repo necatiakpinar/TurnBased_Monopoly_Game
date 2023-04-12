@@ -3,3 +3,7 @@
 
 #include "BoardProperty.h"
 
+int UBoardProperty::GetPropertyCount()
+{
+	return 5;
+}

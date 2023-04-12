@@ -13,5 +13,8 @@ UCLASS()
 class TURNBASEDGAME_API UBoardProperty : public UBaseBoardArea
 {
 	GENERATED_BODY()
+
+public:
+	int GetPropertyCount();
 	
 };

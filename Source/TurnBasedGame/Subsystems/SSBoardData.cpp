@@ -15,7 +15,7 @@
 void USSBoardData::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
-	FString DataTableReference = "/Game/DataTables/DT_BoardAreas";
+	FString DataTableReference = "/Game/DataTables/DT_BoardAreaData";
 	BoardData = LoadObject<UDataTable>(NULL, *DataTableReference, NULL, LOAD_None, NULL);
 	TestNumber = 1234;
 	

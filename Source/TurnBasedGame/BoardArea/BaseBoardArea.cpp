@@ -8,3 +8,8 @@ UBaseBoardArea::UBaseBoardArea()
 {
 
 }
+
+void UBaseBoardArea::Initialize(EBoardAreaType boardAreaType)
+{
+	BoardAreaType = boardAreaType;
+}

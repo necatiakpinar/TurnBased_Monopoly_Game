@@ -21,13 +21,12 @@ public:
 private:
 	UPROPERTY()
 	UBaseBoardArea* BoardItem;
-
 	
 public:	
 	// Sets default values for this actor's properties
 	AObjectBoardCard();
 	void Initialize(UBaseBoardArea* boardItem);
-	
+	FORCEINLINE UBaseBoardArea* GetBoardArea() { return BoardItem;}
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

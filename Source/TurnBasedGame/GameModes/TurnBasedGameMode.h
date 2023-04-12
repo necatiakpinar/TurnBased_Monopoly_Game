@@ -17,7 +17,7 @@ class TURNBASEDGAME_API ATurnBasedGameMode : public AGameModeBase
 	GENERATED_BODY()
 
 public:
-	FORCEINLINE USSBoardData* GetBoardData() const {return BoardDataSubSystem;}
+	FORCEINLINE USSBoardData* GetBoardDataSubsystem() const {return BoardDataSubSystem;}
 private:
 	UMapLoaderManager* MapLoaderManager;
 	USSBoardData* BoardDataSubSystem;

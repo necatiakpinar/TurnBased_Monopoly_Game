@@ -13,10 +13,10 @@ void UMapLoaderManager::Initialize(UDataTable* BoardDataTableObject)
 {
 	BoardDataTable = BoardDataTableObject;
 
-	TArray<FBoardAreaTypes*> AllAreaTypes;
-	BoardDataTable->GetAllRows<FBoardAreaTypes>("",AllAreaTypes);
+	TArray<FBoardAreaData*> AllAreaTypes;
+	BoardDataTable->GetAllRows<FBoardAreaData>("",AllAreaTypes);
 
-	for (FBoardAreaTypes* areaType : AllAreaTypes)
+	for (FBoardAreaData* areaType : AllAreaTypes)
 	{
 		switch(areaType->BoardAreaType)
 		{

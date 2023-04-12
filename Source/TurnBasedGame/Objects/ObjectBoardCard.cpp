@@ -3,6 +3,7 @@
 
 #include "ObjectBoardCard.h"
 #include "TurnBasedGame/BoardArea/BaseBoardArea.h"
+#include "TurnBasedGame/BoardArea/BoardProperty.h"
 
 // Sets default values
 AObjectBoardCard::AObjectBoardCard()
@@ -24,7 +25,6 @@ void AObjectBoardCard::Initialize(UBaseBoardArea* boardItem)
 void AObjectBoardCard::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 
