@@ -38,7 +38,7 @@ void USSMapLoader::CreateLevel(UDataTable* BoardData)
 
 AObjectBoardCard* USSMapLoader::CreateObjectBoardCard(EBoardAreaType BoardAreaType)
 {
-	AObjectBoardCard* BoardCard = nullptr;
+	AObjectBoardCard* ObjectBoardCard = nullptr;
 	FBoardAreaData* BoardAreaData = GetBoardAreaData(BoardAreaType);
 
 	if (BoardAreaData)
@@ -48,20 +48,20 @@ AObjectBoardCard* USSMapLoader::CreateObjectBoardCard(EBoardAreaType BoardAreaTy
 			UBoardProperty* BoardProperty = NewObject<UBoardProperty>(GetTransientPackage());
 			BoardProperty->Initialize(BoardAreaData->BoardAreaType);
 
-			BoardCard = GetWorld()->SpawnActor<AObjectBoardCard>(BoardAreaData->BoardCard, FVector(0,0,0), FRotator::ZeroRotator);
-			BoardCard->Initialize(BoardProperty);
+			ObjectBoardCard = GetWorld()->SpawnActor<AObjectBoardCard>(BoardAreaData->BoardCard, FVector(0,0,0), FRotator::ZeroRotator);
+			ObjectBoardCard->Initialize(BoardProperty);
 		}
 		else if (BoardAreaData->BoardAreaType == EBoardAreaType::PublicFund)
 		{
 			UBoardPublicFund* BoardPublicFund = NewObject<UBoardPublicFund>(GetTransientPackage());
 			BoardPublicFund->Initialize(BoardAreaData->BoardAreaType);
 			
-			BoardCard = GetWorld()->SpawnActor<AObjectBoardCard>(BoardAreaData->BoardCard, FVector(0,0,0), FRotator::ZeroRotator);
-			BoardCard->Initialize(BoardPublicFund);
+			ObjectBoardCard = GetWorld()->SpawnActor<AObjectBoardCard>(BoardAreaData->BoardCard, FVector(0,0,0), FRotator::ZeroRotator);
+			ObjectBoardCard->Initialize(BoardPublicFund);
 		}
 	}
 	
-	return BoardCard;
+	return ObjectBoardCard;
 }
 
 FBoardAreaData* USSMapLoader::GetBoardAreaData(EBoardAreaType BoardAreaType)

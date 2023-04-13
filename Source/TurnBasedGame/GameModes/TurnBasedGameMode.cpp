@@ -14,14 +14,14 @@ void ATurnBasedGameMode::InitGameState()
 	Super::InitGameState();
 	//Load Subsystems
 	LoadSubsystems();
-
-	//Initialize managers 
-	InitializeManagers();
+	
 }
 
 void ATurnBasedGameMode::StartPlay()
 {
 	Super::StartPlay();
+	//Initialize managers 
+	InitializeManagers();
 }
 
 void ATurnBasedGameMode::LoadSubsystems()

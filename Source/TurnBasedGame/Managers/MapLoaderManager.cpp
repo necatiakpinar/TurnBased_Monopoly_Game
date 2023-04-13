@@ -11,23 +11,5 @@
 
 void UMapLoaderManager::Initialize(UDataTable* BoardDataTableObject)
 {
-	BoardDataTable = BoardDataTableObject;
 
-	TArray<FBoardAreaData*> AllAreaTypes;
-	BoardDataTable->GetAllRows<FBoardAreaData>("",AllAreaTypes);
-
-	for (FBoardAreaData* areaType : AllAreaTypes)
-	{
-		switch(areaType->BoardAreaType)
-		{
-		case EBoardAreaType::Property:
-			//AObjectBoardCard* boardCard = GetWorld()->SpawnActor<AObjectBoardCard>(areaType->BoardCard, FVector(0,0,0), FRotator::ZeroRotator);
-			//boardCard->Initialize(NewObject<UBoardProperty>());
-			break;
-
-		default:
-			break;
-		}
-			
-	}
 }
